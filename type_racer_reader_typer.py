@@ -11,7 +11,7 @@ RANDOM_ASCII_RANGE = 5
 INITIAL_TYPO_CHANCE = 0.01
 INCREMENT_TYPO_CHANCE = 0.004
 DELAY_TIME_AFTER_TYPO = 0.4
-DELAY_BETWEEN_CHAR = 0.045
+DELAY_BETWEEN_CHAR = 0.04
 
 def extract_text_from_image() -> None:
 	PIPE_ASCII = 124
@@ -48,6 +48,7 @@ def type_text() -> None:
 				total_char -= 1
 				total_word += 1
 				keyboard.wait('f9')
+				
 			if randomize_typo(typo_chance):
 				random_char = get_nearby_random_char(c)
 				keyboard.write(random_char)
@@ -56,6 +57,7 @@ def type_text() -> None:
 				total_typo += 1
 			else:
 				typo_chance += INCREMENT_TYPO_CHANCE
+				
 			keyboard.write(c)
 			c = f_in.read(1)
 			total_char += 1
@@ -89,8 +91,11 @@ def clamp_int(value: int, min: int, max: int) -> int:
 	return result
 			
 if __name__ == '__main__':
-	extract_text_from_image()
 	while(True):
+		print('Type \'s\' to start reading, \'e\' to exit...')
+		inp = input()
+		if (inp == 'e'): break
+		extract_text_from_image()
 		print('Press esc to start typing..')
 		keyboard.wait('esc')
 		type_text()
