@@ -1,12 +1,24 @@
-Tutorial:
-1. Take a screenshot of the text you will need to type
-2. Save it, in the same directory, and name it 'input.jpg'
-3. Run this command to run the script:
-	python type_racer_reader_typer.py
-4. Wait for around 1-2 seconds
-5. Select the typing textbox
-6. Press escape to start typing
-7. Enjoy the 2 million WPM!
+# TypeRacerBot
+
+## Requirements
+
+```
+pytesseract==0.2.6
+Pillow==6.0.0
+```
+
+## Tutorial
+1. Open [TypeRacer](https://play.typeracer.com/)
+2. Take a screenshot of the text you will need to type
+3. Save it, in the same directory, and name it 'input.jpg'
+4. Run this command to run the script:
+    ```shell script
+    python type_racer_reader_typer.py
+    ```
+5. Wait for around 1-2 seconds
+6. Select the typing textbox
+7. Press F9 to type the next word, or hold to keep typing (typos are automatically generated!)
+8. Enjoy the 2 million WPM!
 
 *. You can edit and fix any typo by editing 'result.txt' before doing step no.6
 
